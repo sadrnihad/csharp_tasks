@@ -19,7 +19,7 @@ namespace ConsoleApp3
             return result;
         }
 
-        // 🔹 Method 2: Count how many products have the given brand name
+       
         static int FilterbyName(Device[] products, string name)
         {
             int count = 0;
@@ -87,10 +87,9 @@ namespace ConsoleApp3
                 isRGBkeyboard = false
             };
 
-            // --- Store all devices in one array
             Device[] products = { phone1, phone, laptop1, laptop };
 
-            // --- Display all device information
+          
             foreach (var item in products)
             {
                 Console.WriteLine("\n==========================");
@@ -99,17 +98,27 @@ namespace ConsoleApp3
                 item.CalculateProfit();
             }
 
-            // --- Filter by price
+           
             Console.WriteLine("\n==========================");
             Console.WriteLine("Qiyməti 1000 AZN-dən yuxarı olan məhsullar:");
-            var expensive = FilterbyPrice(products, 1000D);
+            var expensive = FilterbyPrice(products, 1000);
             foreach (var name in expensive)
             {
                 Console.WriteLine(name);
             }
 
-            // --- Filter by brand name
+            
             Console.WriteLine("\n'iPhone' məhsullarının sayı: " + FilterbyName(products, "iPhone"));
+        }
+        public class Program
+        {
+            public static void Main(string[] args)
+            {
+                Human omer = new Human("Nihad", "Sadraddinbayli", 19, "Kisi", "alman", 2006);
+                Console.WriteLine("Obyekt 1 Məlumatları:");
+                omer.GetFullName();
+                omer.GetBirthYear();
+            }
         }
     }
 }
